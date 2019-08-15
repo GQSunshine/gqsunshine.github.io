@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/hello_css.css">
+	<script type="text/javascript" src="../javascript/welcome&hello_js.js"></script>
+	<link rel="shortcut icon" href="../imgs/chrome42.png" type="image/x-icon">
+	<title>登录</title>
+</head>
+
+<body>
+	<div  class="header">
+		<img src="../imgs/chrome01.png" height="38px" style="border-radius: 19px;">
+		<h1 style="margin-top: 10px;">Hello Everyone!</h1>
+	</div>
+	<div class="form">
+		<form action="../html/S&S.html" onSubmit="return submit_form()">
+			<br>
+			<h4>用户名：</h4><input type="text" id="user" onfocus="check('user_span','用户名应不少于6位')" onblur="userBlur()" onkeyup="userKeyUp()"/><br> <span id="user_span"></span>
+			<br>
+
+			<h4>密码：</h4><input type="password" id="password" onfocus="check('password_span','密码应不少于6位')" onblur="passwordBlur()" onkeyup="passwordKeyUp()"/><br> <span id="password_span"></span>
+			<br>
+			
+			<br>
+			<input type="submit" value="登录" style="background-color: rgba(63,121,148,1.00); height: 34px; width: 100px; border: 0; border-radius: 17px;">
+		</form>
+	</div>
+</body>
+</html>

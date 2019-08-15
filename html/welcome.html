@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/welcome_css.css">
+	<script type="text/javascript" src="../javascript/welcome&hello_js.js"></script>
+	<link rel="shortcut icon" href="../imgs/chrome42.png" type="image/x-icon">
+	<title>注册</title>
+</head>
+
+<body>
+	<div align="center" style="font-size: 18px;">
+		<h1>S&#38;S Welcome Everyone!</h1>
+	</div>
+	<div class="form">
+		<form onSubmit="return submit_form()" action="../html/hello.html">
+			<br>
+			<h4>用户名：</h4><input type="text" id="user" onfocus="check('user_span','用户名应不少于6位')" onblur="userBlur()" onkeyup="userKeyUp()"/><br> <span id="user_span"></span>
+			<br>
+
+			<h4>密码：</h4><input type="password" id="password" onfocus="check('password_span','密码应不少于6位')" onblur="passwordBlur()" onkeyup="passwordKeyUp()"/><br> <span id="password_span"></span>
+			<br>
+
+			<h4>确认密码：</h4><input type="password" id="repassword" onfocus="check('repassword_span','确认密码应相同')" onblur="repasswordBlur()" onkeyup="repasswordKeyUp()"/><br> <span id="repassword_span"></span>
+			<br>
+
+			<h4>邮箱：</h4><input type="email" id="email" onfocus="check('email_span','邮箱格式应正确')" onblur="emailBlur()" onkeyup="emailKeyUp()"/><br> <span id="email_span"></span>
+			<br>
+
+			<h4>手机号：</h4><input type="text" id="telephone" onfocus="check('telephone_span','手机号应正确')" onblur="telephoneBlur()" onkeyup="telephoneKeyUp()"/><br> <span id="telephone_span"></span>
+			<br>
+			<select id="position" onchange="change()">
+				<option value="-1">请选择地区</option>
+				<option value="0">华北地区</option>
+				<option value="1">东北地区</option>
+				<option value="2">西北地区</option>
+				<option value="3">西南地区</option>
+				<option value="4">华南地区</option>
+				<option value="5">华中地区</option>
+				<option value="6">华东地区</option>
+				<option value="7">其他地区</option>
+			</select>
+
+			<select id="provinceSelect">
+				<option>省份</option>
+			</select>
+			<br>
+			<br>
+			<input type="submit" value="注册" style="background-color: rgba(63,121,148,1.00); height: 34px; width: 100px; border: 0; border-radius: 17px">
+		</form>
+	</div>
+</body>
+</html>
