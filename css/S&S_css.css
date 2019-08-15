@@ -94,6 +94,9 @@
 			border-radius: 20px;
 			background-color: steelblue;
 		}
+		input: hover{
+			cursor: pointer;
+		}
 		.firefox{
 			height: 600px;
 		}
