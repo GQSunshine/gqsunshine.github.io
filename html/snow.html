@@ -40,6 +40,7 @@
 
             //定义一个初始化随机数,使雪花在屏幕中
             var div = document.createElement('div');
+		div.style.opacity=(Math.ceil(Math.random()*3)+7)/10;  //设置透明度
             div.className = 'snow';
             div.innerHTML="✽";
             div.style.fontSize = 8+Math.ceil(Math.random()*12)+'px';
