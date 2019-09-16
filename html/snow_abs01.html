@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>snow04</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            background-image: url(../month03.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .snow{
+            color: white;
+            position: absolute;
+        }
+		
+    </style>
+</head>
+<body >
+    <script>
+	
+        //获取屏幕宽高
+        var windowWidth = window.screen.width;
+        var windowHeight = window.screen.height;
+ 
+        //创建雪花
+        function createSnow(){
+
+            var move_left = Math.random() * windowWidth;
+            var move_top = Math.random()* windowHeight;
+			
+			var left = 0;
+			var top = 0;
+
+            //定义一个初始化随机数,使雪花在屏幕中
+            var div = document.createElement('div');
+            div.style.position='absolute';
+            div.className = 'snow';
+            div.innerHTML="✽";
+            div.style.fontSize = 8+Math.ceil(Math.random()*12)+'px';
+			
+			      left = move_left;
+            top = move_top;
+            div.style.left = left+'px';
+            div.style.top = top+'px';
+			
+            document.body.appendChild(div);
+            
+            setInterval(function () {
+                left += Math.abs(Math.ceil(Math.random()*3));
+                top += Math.abs(Math.ceil(Math.random()*5));
+                div.style.left = left+'px';
+                div.style.top = top+'px';
+ 
+                //如果雪花跑到屏幕外面了,让雪花重新返回屏幕顶部
+                if(left >= windowWidth){
+					          left = 0;
+                    div.style.left = left+'px';
+                }
+                if(top >= windowHeight){
+					          top = 0;
+                    div.style.top = top+'px';
+                }
+            },50);
+ 
+        }
+        for(var i = 0 ; i < 100 ; i++){
+            createSnow();
+        }
+    </script>
+</body>
+</html>
