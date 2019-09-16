@@ -2,35 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>S&S-snow</title>
+    <title>snow</title>
     <style>
         body,html{
             margin: 0;
             padding: 0;
             overflow: hidden;
             height: 100%;
-			background-image: url(../month03.jpg);
+            background: url(../month03.jpg);
+            background-position: center center;
 			background-repeat: no-repeat;
+			background-attachment: fixed;
 			background-size: cover;
         }
         .snow{
             color: white;
             position: absolute;
+            /*border-radius: 50%;*/
         }
-		
     </style>
- 	<script>
-		window.onload = function() {
-			var mus = document.getElementById("audio");
-			mus.play();
-			
-		}
-	</script>
+ 
 </head>
-<body >
-  	<audio src="E:\sanwenshi.mp3" loop="loop" id="audio"></audio>
+<body>
     <script>
-	
         //获取屏幕宽高
         var windowWidth = document.body.clientWidth;
         var windowHeight = document.body.clientHeight;
@@ -46,7 +40,7 @@
 
             //定义一个初始化随机数,使雪花在屏幕中
             var div = document.createElement('div');
-            div.style.opacity=(Math.ceil(Math.random()*3)+7)/10;  //设置透明度
+		div.style.opacity=(Math.ceil(Math.random()*3)+7)/10;  //设置透明度
             div.className = 'snow';
             div.innerHTML="✽";
             div.style.fontSize = 6+Math.ceil(Math.random()*10)+'px';
