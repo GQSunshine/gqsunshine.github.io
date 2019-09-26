@@ -1,0 +1,61 @@
+/* CSS Document */
+/* CSS Document */
+body{
+		margin: 0;
+		min-width: 1200px;
+/*		font-family: “Open Sans”, Arial, “Hiragino Sans GB”, “Microsoft YaHei”, “微软雅黑”, “STHeiti”, “WenQuanYi Micro Hei”, SimSun, sans-serif*/
+	}
+	.header{
+		background-color: slategray;
+		margin: 0;
+		border: 0;
+		line-height: 50px;
+		font-size: 1.5em;
+		color: white;
+	}
+	.select{
+		width: 60%;
+		padding: 0 20%;
+		margin: 0
+	}
+	.obj{
+		width: 100%;
+		margin: 10px 0;
+		background-color: skyblue;
+		
+		border-radius: 25px;
+	}
+	#obj0{
+		width: 100%;
+		margin: 10px 0;
+		background-color: skyblue;
+		
+		border-radius: 25px;
+	}
+	.obj ul{
+		margin: 0;
+		height: 40px;
+	}
+	#obj0 ul{
+		margin: 0;
+		height: 40px;
+	}
+	.up_ul li{
+		display: inline-block;
+		font-size: 1em;
+		padding: 10px 8%;
+		width: 45px;
+	}
+	.down_ul li{
+		display: inline-block;
+		padding: 0 8%;
+		width: 45px;
+		line-height: 40px;
+		
+	}
+	.eicon{
+		vertical-align:middle;/*图片上下居中*/
+		border-radius: 15px;
+		width: 30px;
+	}
+

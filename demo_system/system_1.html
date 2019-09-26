@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DemoSystem</title>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js_system.js"></script>
+<script>
+        //根据设备加载不同的样式
+        var setStyle = function(cssArr){
+            var i= 0,len = cssArr.length;
+            for(i;i<len;i++){
+                document.write('<link href="'+cssArr[i]+'" type="text/css" rel=stylesheet>');
+            }
+        };
+        // 判断是否移动端
+        function goPAGE() {
+            if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                // window.location.href="移动端url";
+				document.write('<link href="css_mobile.css" rel="stylesheet" type="text/css" media="screen" />');
+//                window.location.href="css_mobile.css";
+                //判断访问环境是 移动端 则加载以下样式
+//                setStyle(['css_mobile.css']);
+            }
+            else {
+				document.write('<link href="css_pc.css" rel="stylesheet" type="text/css" media="screen" />');
+                // window.location.href="pc端url"; 
+//                window.location.href="css_pc.css";
+            }
+        }
+        goPAGE();        // 调用function
+</script>
+<style>
+	h3{
+		margin: 0;
+	}
+	.button{
+		background-color: skyblue;
+		border: 0;
+		display: inline-block;
+	}
+	.up_ul>li>a{
+		color: black;
+		text-decoration: none;
+	}
+</style>
+</head>
+<body>
+	<div align="center" width="100%" class="header">
+		<h3>***管理测试</h3>
+	</div>
+	<div id="d_img">
+		<img src="system_1.jpg" width="100%" class="img1">
+	</div>
+	
+	<div class="select">
+		<div id="obj0">
+			<ul class="up_ul" id="pm">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>PM</b></li>
+				<li id="add"><a href="javascript:"><b>添加</b></a></li>
+				<li id="amend"><a href="javascript:"><b>修改</b></a></li>
+				<li id="del"><a href="javascript:"><b>删除</b></a></li>
+				<li id="search"><a href="javascript:"><b>搜索</b></a></li>
+			</ul>
+			<hr style="background-color: black; height: 2px;">
+			<ul class="up_ul">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>ICON</b></li>
+				<li><b>编号</b></li>
+				<li><b>姓名</b></li>
+				<li><b>积分</b></li>
+				<li><b>工种</b></li>
+			</ul>
+		</div>
+		<div class="obj">
+			<ul class="up_ul" style="display: none">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>ICON</b></li>
+				<li><b>编号</b></li>
+				<li><b>姓名</b></li>
+				<li><b>积分</b></li>
+				<li><b>工种</b></li>
+			</ul>
+			
+			<ul class="down_ul">
+				<li style="padding: 0; width: 45px; text-align: center;"><img src="fang01.jpg" class="eicon"></li>
+				<li>1</li>
+				<li>name</li>
+				<li>100</li>
+				<li>Web</li>
+			</ul>
+		</div>
+		
+		<div class="obj">
+			<ul class="up_ul" style="display: none">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>ICON</b></li>
+				<li><b>编号</b></li>
+				<li><b>姓名</b></li>
+				<li><b>积分</b></li>
+				<li><b>工种</b></li>
+			</ul>
+			
+			<ul class="down_ul">
+				<li style="padding: 0; width: 45px; text-align: center;"><img src="fang01.jpg" class="eicon"></li>
+				<li>2</li>
+				<li>name</li>
+				<li>100</li>
+				<li>Java</li>
+			</ul>
+		</div>
+		
+		<div class="obj">
+			<ul class="up_ul" style="display: none">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>ICON</b></li>
+				<li><b>编号</b></li>
+				<li><b>姓名</b></li>
+				<li><b>积分</b></li>
+				<li><b>工种</b></li>
+			</ul>
+			
+			<ul class="down_ul">
+				<li style="padding: 0; width: 45px; text-align: center;"><img src="fang01.jpg" class="eicon"></li>
+				<li>3</li>
+				<li>name</li>
+				<li>100</li>
+				<li>Python</li>
+			</ul>
+		</div>
+		
+		<div class="obj">
+			<ul class="up_ul" style="display: none">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>ICON</b></li>
+				<li><b>编号</b></li>
+				<li><b>姓名</b></li>
+				<li><b>积分</b></li>
+				<li><b>工种</b></li>
+			</ul>
+			
+			<ul class="down_ul">
+				<li style="padding: 0; width: 45px; text-align: center;"><img src="fang01.jpg" width="30px" class="eicon"></li>
+				<li>4</li>
+				<li>name</li>
+				<li>100</li>
+				<li>C++</li>
+			</ul>
+		</div>
+		
+		<div class="obj">
+			<ul class="up_ul" style="display: none">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>ICON</b></li>
+				<li><b>编号</b></li>
+				<li><b>姓名</b></li>
+				<li><b>积分</b></li>
+				<li><b>工种</b></li>
+			</ul>
+			
+			<ul class="down_ul">
+				<li style="padding: 0; width: 45px; text-align: center;"><img src="fang01.jpg" width="30px" class="eicon"></li>
+				<li>5</li>
+				<li>name</li>
+				<li>100</li>
+				<li>Javascript</li>
+			</ul>
+		</div>
+		
+		<div class="obj">
+			<ul class="up_ul" style="display: none">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>ICON</b></li>
+				<li><b>编号</b></li>
+				<li><b>姓名</b></li>
+				<li><b>积分</b></li>
+				<li><b>工种</b></li>
+			</ul>
+			
+			<ul class="down_ul">
+				<li style="padding: 0; width: 45px; text-align: center;"><img src="fang01.jpg" width="30px" class="eicon"></li>
+				<li>6</li>
+				<li>name</li>
+				<li>100</li>
+				<li>php</li>
+			</ul>
+		</div>
+		
+		<div class="obj">
+			<ul class="up_ul" style="display: none">
+				<li style="padding: 0; width: 45px; text-align: center;"><b>ICON</b></li>
+				<li><b>编号</b></li>
+				<li><b>姓名</b></li>
+				<li><b>积分</b></li>
+				<li><b>工种</b></li>
+			</ul>
+			
+			<ul class="down_ul">
+				<li style="padding: 0; width: 45px; text-align: center;"><img src="fang01.jpg" width="30px" class="eicon"></li>
+				<li>7</li>
+				<li>name</li>
+				<li>100</li>
+				<li>Web</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

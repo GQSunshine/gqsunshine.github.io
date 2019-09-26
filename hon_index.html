@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="imgs/hon.jpg">
+<title>Home</title>
+	<style>
+		body{
+			background-color: #fff;
+			margin: 0;
+			min-width: 550px;
+		}
+	
+		header{
+			height: 50px;
+			width: 100%;
+			text-align: center;
+			background-color: #708090;
+			position: fixed;
+			top: 0;
+		}
+		header>a{
+			display: inline-block;
+			padding:0 3%;
+			margin: 0;
+			color: #fff;
+			text-decoration: none;
+		}
+		header>a>h3{
+			line-height: 50px;
+			margin: 0;
+		}
+		header>a:hover{
+			color: #708090;
+			border-bottom: solid 5px #708090; 
+			background-color: white;
+		}
+		
+		.three{
+			padding: 50px;
+			padding-top: 8%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.box{
+			flex: 25%;
+			max-width: 24%;
+			margin: 15px;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		.testimonial{
+			background: #fff;
+			padding: 15px 0px;
+			min-width: 200px;
+		}
+		.border{
+			height: 5px;
+			background: #708090;
+			margin: 15px;
+			padding: 0 15%;
+		}
+		.box:hover{
+			box-shadow: 0px 5px 10px #708090;
+			cursor:pointer;
+			opacity: 1;
+		}
+		.hh1{
+			line-height: 30px;
+			width: 80px;
+			margin: 0;
+			color: #ffffff;
+			padding:0 3%;
+		}
+		.hh1:hover{
+			cursor: pointer;
+		}
+		.bottom{
+			width: 100%;
+			position: fixed;
+			bottom: 0px;
+			background-color: #708090;
+			color: white;
+			text-align: center;
+		}
+		.bottom>ul{
+			margin: 10px 0;
+			padding: 0;
+		}
+		.bottom>ul>li{
+			display: inline-block;
+			padding: 0 10px;
+			height: 30px;
+			overflow: hidden;
+			list-style: none;
+		}
+		.icon{
+			width: 30px;
+			border-radius: 7px;
+			visibility: hidden;
+		}
+		
+		@media screen and (orientation:portrait){
+			.box{
+				flex: 60%;
+				max-width: 60%;
+				min-width: 400px;
+			}
+			.testimonial>img{
+				width: 300px;
+			}
+		}
+		@media screen and(orientation:landspace){
+			.box{
+				flex: 25%;
+				max-width: 24%;
+			}
+			.testimonial>img{
+				width: 200px;
+			}
+		}
+		@media screen and (max-width: 960px){
+			.box{
+				flex: 60%;
+				max-width: 60%;
+				min-width: 400px;
+			}
+			.testimonial>img{
+				width: 300px;
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+		function show(){
+			var icons = document.getElementsByClassName("icon");
+			for (var i=0; i < icons.length; i++){
+				icons[i].style.visibility = "visible";
+			}
+		}
+		
+		function hid(){
+			var icons = document.getElementsByClassName("icon");
+			for (var i=0; i < icons.length; i++){
+				icons[i].style.visibility = "hidden";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<a href="#"><h3>问题1</h3></a>
+		<a href="#"><h3>问题2</h3></a>
+		<a href="#"><h3>问题3</h3></a>
+		<a href="#"><h3>问题4</h3></a>
+		<a href="#"><h3>问题5</h3></a>
+		<a href="#"><h3>问题6</h3></a>
+	</header>
+	
+	<div class="three">
+		<div class="box" align="center" onclick="window.open('#');">
+			<div class="testimonial">
+					<h3>本站</h3>
+					<div class="border"></div>
+					<img src="imgs/fang01.jpg" width="200px">
+			</div>
+			
+		</div>
+		<div class="box" align="center" onclick="window.open('#');">
+			<div class="testimonial">
+					<h3>外部</h3>
+					<div class="border"></div>
+					<img src="imgs/fang02.jpg" width="200px">
+			</div>
+		</div>
+		<div class="box" align="center" onclick="window.open('#');">
+			<div class="testimonial">
+					<h3>论坛</h3>
+					<div class="border"></div>
+					<img src="imgs/fang03.jpg" width="200px" align="center">
+			</div>
+		</div>
+	</div>
+	<div class="bottom" id="bom">
+		<ul onmouseleave="hid()">
+			<li><a href="#"><img src="imgs/facebook01.png" class="icon" id="img"></a></li>
+			<li><a href="#"><img src="imgs/twitter01.png" class="icon"></a></li>
+			<li><h3 class="hh1" onmouseenter="show()">关于我们</h3></li>
+			<li><a href="#"><img src="imgs/weixin02.png" class="icon"></a></li>
+			<li><a href="#"><img src="imgs/weibo01.jpg" class="icon"></a></li>
+		</ul>
+	</div>
+</body>
+</html>
