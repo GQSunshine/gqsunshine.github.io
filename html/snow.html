@@ -28,7 +28,11 @@
         //获取屏幕宽高
         var windowWidth = document.body.clientWidth;
         var windowHeight = document.body.clientHeight;
- 
+	//当页面大小改变时
+ 	window.onresize = function(){
+            windowWidth = document.body.clientWidth;
+            windowHeight = document.body.clientHeight;
+        }
         //创建雪花
         function createSnow(){
  
@@ -50,7 +54,7 @@
             
             //雪花飘落
             
-            setInterval(function () {
+            var interval = setInterval(function () {
                 move_left += Math.abs(Math.ceil(Math.random()*2));
                 move_top += Math.abs(Math.ceil(Math.random()*3));
                 div.style.transform = 'translate('+(move_left+'px')+','+(move_top+'px')+')';
@@ -58,10 +62,22 @@
                 //如果雪花跑到屏幕外面了,让雪花重新返回屏幕顶部
                 if(move_left >= windowWidth){
                     move_left = 0;
+		    var n = Math.ceil(Math.random()*10);
+                    if(n%2 == 0){
+                        document.body.removeChild(div);
+                        createSnow();
+                        clearInterval(interval);
+                    }
                 }
  
                 if(move_top >= windowHeight){
                     move_top = 0;
+		    var n = Math.ceil(Math.random()*10);
+                    if(n%2 == 0){
+                        document.body.removeChild(div);
+                        createSnow();
+                        clearInterval(interval);
+                    }
                 }
             },15)
  
