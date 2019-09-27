@@ -9,82 +9,139 @@
             padding: 0;
             overflow: hidden;
             height: 100%;
-            background: url(../month03.jpg);
-            background-position: center center;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			background-size: cover;
+			background-image: url(../month03.jpg);
+			background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
         }
         .snow{
             color: white;
             position: absolute;
-            /*border-radius: 50%;*/
         }
+		
     </style>
- 
 </head>
-<body>
+<body >
+  	<audio src="E:\sanwenshi.mp3" loop="loop" id="audio"></audio>
     <script>
-        //获取屏幕宽高
-        var windowWidth = document.body.clientWidth;
-        var windowHeight = document.body.clientHeight;
- 	//当页面大小改变时
-//  	window.onresize = function(){
-//             windowWidth = document.body.clientWidth;
-//             windowHeight = document.body.clientHeight;
-//         }
-        //创建雪花
-        function createSnow(){
- 
-            var left = 0;
-            var top = 0;
+	    // 判断是否移动端
+        function goPAGE() {
+            if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                // window.location.href="移动端url";
+                //document.write('<link href="css_mobile.css" rel="stylesheet" type="text/css" media="screen" />');
+                //获取屏幕宽高
+                var windowWidth = document.body.clientWidth;
+                var windowHeight = document.body.clientHeight;
+         
+                window.onresize = function(){
+                       windowWidth = document.body.clientWidth;
+                       windowHeight = document.body.clientHeight;
+                }      
+                function createSnow(){
+         
+                    var left = 0;
+                    var top = 0;
 
-            var move_left = Math.random() * windowWidth;
-            var move_top = Math.random()* windowHeight;
+                    var move_left = Math.random() * windowWidth;
+                    var move_top = Math.random()* windowHeight;
 
-            //定义一个初始化随机数,使雪花在屏幕中
-            var div = document.createElement('div');
-		div.style.opacity=(Math.ceil(Math.random()*3)+7)/10;  //设置透明度
-            div.className = 'snow';
-            div.innerHTML="✽";
-            div.style.fontSize = 6+Math.ceil(Math.random()*10)+'px';
+                    //定义一个初始化随机数,使雪花在屏幕中
+                    var div = document.createElement('div');
+                    div.style.opacity=(Math.ceil(Math.random()*3)+7)/10;  //设置透明度
+                    div.className = 'snow';
+                    div.innerHTML="✽";
+                    div.style.fontSize = 6+Math.ceil(Math.random()*10)+'px';
 
-            div.style.transform = 'translate('+(move_left+'px')+','+(move_top+'px')+')';
-            document.body.appendChild(div);
-            
-            //雪花飘落
-            
-            var interval = setInterval(function () {
-                move_left += Math.abs(Math.ceil(Math.random()*2));
-                move_top += Math.abs(Math.ceil(Math.random()*3));
-                div.style.transform = 'translate('+(move_left+'px')+','+(move_top+'px')+')';
- 
-                //如果雪花跑到屏幕外面了,让雪花重新返回屏幕顶部
-                if(move_left >= windowWidth){
-                    move_left = 0;
-// 		    var n = Math.ceil(Math.random()*10);
-//                     if(n%2 == 0){
-//                         document.body.removeChild(div);
-//                         createSnow();
-//                         clearInterval(interval);
-//                     }
+                    div.style.transform = 'translate('+(move_left+'px')+','+(move_top+'px')+')';
+                    document.body.appendChild(div);
+                    
+                    //雪花飘落
+                    
+                    var interval = setInterval(function () {
+                        move_left += Math.abs(Math.ceil(Math.random()*2));
+                        move_top += Math.abs(Math.ceil(Math.random()*3));
+                        div.style.transform = 'translate('+(move_left+'px')+','+(move_top+'px')+')';
+         
+                        //如果雪花跑到屏幕外面了,让雪花重新返回屏幕顶部
+                        if(move_left >= windowWidth){
+                            move_left = 0;
+                        }
+         
+                        if(move_top >= windowHeight){
+                            move_top = 0;
+                        }
+                    },15)
+         
                 }
- 
-                if(move_top >= windowHeight){
-                    move_top = 0;
-// 		    var n = Math.ceil(Math.random()*10);
-//                     if(n%2 == 0){
-//                         document.body.removeChild(div);
-//                         createSnow();
-//                         clearInterval(interval);
-//                     }
+                for(var i = 0 ; i < 200 ; i++){
+                    createSnow();
                 }
-            },15)
- 
+            }
+            else {
+                        //获取屏幕宽高
+                var windowWidth = document.body.clientWidth;
+                var windowHeight = document.body.clientHeight;
+         
+                window.onresize = function(){
+                       windowWidth = document.body.clientWidth;
+                       windowHeight = document.body.clientHeight;
+                }      
+                function createSnow(){
+         
+                    var left = 0;
+                    var top = 0;
+
+                    var move_left = Math.random() * windowWidth;
+                    var move_top = Math.random()* windowHeight;
+
+                    //定义一个初始化随机数,使雪花在屏幕中
+                    var div = document.createElement('div');
+                    div.style.opacity=(Math.ceil(Math.random()*3)+7)/10;  //设置透明度
+                    div.className = 'snow';
+                    div.innerHTML="✽";
+                    div.style.fontSize = 6+Math.ceil(Math.random()*10)+'px';
+
+                    div.style.transform = 'translate('+(move_left+'px')+','+(move_top+'px')+')';
+                    document.body.appendChild(div);
+                    
+                    //雪花飘落
+                    
+                    var interval = setInterval(function () {
+                        move_left += Math.abs(Math.ceil(Math.random()*2));
+                        move_top += Math.abs(Math.ceil(Math.random()*3));
+                        div.style.transform = 'translate('+(move_left+'px')+','+(move_top+'px')+')';
+         
+                        //如果雪花跑到屏幕外面了,让雪花重新返回屏幕顶部
+                        if(move_left >= windowWidth){
+                            move_left = 0;
+                            var n = Math.ceil(Math.random()*10);
+                            if(n%2 == 0){
+                                document.body.removeChild(div);
+                                createSnow();
+                                clearInterval(interval);
+                            }
+                        }
+         
+                        if(move_top >= windowHeight){
+                            move_top = 0;
+                            var n = Math.ceil(Math.random()*10);
+                            if(n%2 == 0){
+                                document.body.removeChild(div);
+                                createSnow();
+                                clearInterval(interval);
+                            }
+                        }
+                    },15)
+         
+                }
+                for(var i = 0 ; i < 200 ; i++){
+                    createSnow();
+                }
+            }
         }
-        for(var i = 0 ; i < 200 ; i++){
-            createSnow()
-        }
+        goPAGE();        // 调用function
+        
     </script>
 </body>
 </html>
