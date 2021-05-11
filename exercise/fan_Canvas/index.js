@@ -11,14 +11,14 @@ let fanSwitch = document.getElementById('fanSwitch');
 speedUp.addEventListener('click', function(e){
   if(speed < 10){
     speed++;
-    speedDown.style.backgroundColor = "#fff"
+    speedDown.disabled = false;
   }
 })
 
 speedDown.addEventListener('click', function(e){
   if(speed == 2){
     speed--;
-    e.target.style.backgroundColor = "#ccc"
+    speedDown.disabled = true;
   }else if(speed > 2){
     speed--;
   }
@@ -27,10 +27,14 @@ speedDown.addEventListener('click', function(e){
 fanSwitch.addEventListener('click', function(e){
   if(speed){
     speed = 0;
-    e.target.style.backgroundColor = "#fff"
+    e.target.style.backgroundColor = "#fff";
+    speedUp.disabled = true;
+    speedDown.disabled = true;
   }else{
     speed = 5;
     e.target.style.backgroundColor = "#01a49b"
+    speedUp.disabled = false;
+    speedDown.disabled = false;
   }
 })
 
@@ -39,6 +43,7 @@ setInterval(function(){
   drawStatic(ctx);
   drawBlade(a)
   a += speed;
+  a = a % 360;
 },20)
 
 // 圆角矩形
